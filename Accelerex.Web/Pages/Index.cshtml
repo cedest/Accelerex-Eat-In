@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style type="text/css">
+    .processTypeHolder {
+        display: none;
+    }
+
+        .processTypeHolder.active {
+            display: block !important;
+        }
+</style>
+
+<div class="text-left">
+    <h1 class="display-4 mb-4">Open Hours (OH) Manager</h1>
+
+    <form method="post" id="openHours">
+        <div class="row" style="font-size:1.2rem;">
+            <div class="col-lg-6">
+                <div class="form-group mb-3">
+                    <div class="form-check form-check-inline">
+                        <input asp-for="IsFileUpload" class="form-check-input" processType="File" type="radio" name="processType" id="processTypeFile" value="File" checked>
+                        <label class="form-check-label font-weight-bold" for="processTypeFile">
+                            Upload File
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline ml-5">
+                        <input asp-for="IsJsonText" class="form-check-input" processType="Text" type="radio" name="processType" id="processTypeText" value="Text">
+                        <label class="form-check-label font-weight-bold" for="processTypeText">
+                            Paste Text
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group active File processTypeHolder my-5">
+                    <label for="openHoursFile" class="font-weight-bold mb-3">Open Hours File</label>
+                    <input asp-for="OpenHourFile" type="file" accept=".txt, .json" class="form-control-file p-2 border" id="openHoursFile">
+                    <span asp-validation-for="OpenHourFile" class="text-danger"></span>
+                </div>
+                <div class="form-group Text processTypeHolder my-5">
+                    <label for="openHoursText" class="font-weight-bold mb-3">Open Hours Text (Paste text below!!)</label>
+                    <textarea asp-for="OpenHourText" class="form-control" id="openHoursText" rows="9" style="resize: none"></textarea>
+                    <span asp-validation-for="OpenHourText" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Process OH! <i class="far fa-paper-plane ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('change', 'input[type="radio"]', function (e, i) {
+            $('.processTypeHolder').removeClass('active');
+            var processType = $(this).attr('processType');
+            $('.processTypeHolder.' + processType).addClass('active');
+        });
+
+        $(document).on('click', '.btn', function () {
+            $(this).attr('disable', 'disable');
+        });
+    });
+</script>

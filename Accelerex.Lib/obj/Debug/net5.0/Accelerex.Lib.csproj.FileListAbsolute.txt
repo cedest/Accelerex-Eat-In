@@ -1,0 +1,12 @@
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\bin\Debug\net5.0\Accelerex.Lib.deps.json
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\bin\Debug\net5.0\Accelerex.Lib.dll
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\bin\Debug\net5.0\ref\Accelerex.Lib.dll
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\bin\Debug\net5.0\Accelerex.Lib.pdb
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.csproj.AssemblyReference.cache
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.AssemblyInfoInputs.cache
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.AssemblyInfo.cs
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.csproj.CoreCompileInputs.cache
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.dll
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\ref\Accelerex.Lib.dll
+C:\Users\adekadey\source\repos\Accelerex.Test\Accelerex.Lib\obj\Debug\net5.0\Accelerex.Lib.pdb

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mjw8Mr9GSV0vJkHfYCQN/FFTv6Fh8tyajRFswy+HFyDEWpbIcSSy+GS/mSlp2jefJ7CYesPZufZdij1DqmKt6g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adekadey\\source\\repos\\Accelerex.Test\\Accelerex.Lib\\Accelerex.Lib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adekadey\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
