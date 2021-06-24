@@ -1,2 +1,26 @@
 ﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/validation-requiredwhen.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setTimeout(function () {
+            // extend range validator method to treat checkboxes differently
+            var defaultRangeValidator = $.validator.methods.range;
+            $.validator.methods.range = function (value, element, param) {
+                if (element.type === 'checkbox') {
+                    // if it's a checkbox return true if it is checked
+                    return element.checked;
+                }
+                if (element.type === 'radio') {
+                    // if it's a checkbox return true if it is checked
+                    return element.checked;
+                }
+
+                // otherwise run the default validation function
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }, 100);
+
+    });
+</script>

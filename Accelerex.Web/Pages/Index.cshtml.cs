@@ -9,7 +9,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Accelerex.Web.Pages
@@ -27,18 +29,20 @@ namespace Accelerex.Web.Pages
         }
 
         [BindProperty]
-        public bool IsFileUpload { get; set; }
+        public InputModel Input { get; set; }
 
-        [BindProperty]
-        public bool IsJsonText { get; set; }
+        public class InputModel
+        {
+            public string UploadType { get; set; }
 
-        [BindProperty]
-        [RequiredWhen("IsFileUpload", false, AllowEmptyStrings = false, ErrorMessage = "A PWR is required if request isn't an Emergency.")]
-        public IFormFile OpenHourFile { get; set; }
+            [RequiredWhen("UploadType", "File", AllowEmptyStrings = false, ErrorMessage = "Please upload file (Json string).")]
+            public IFormFile OpenHourFile { get; set; }
 
-        [BindProperty]
-        [RequiredWhen("IsJsonText", false, AllowEmptyStrings = false, ErrorMessage = "A PWR is required if request isn't an Emergency.")]
-        public string OpenHourText { get; set; }
+            [RequiredWhen("UploadType", "Text", AllowEmptyStrings = false, ErrorMessage = "Please paste Json string below")]
+            public string OpenHourText { get; set; }
+
+            public OpenHourResponseModel OpenHours { get; set; }
+        }
 
         public OpenHourRequestModel RequestModel { get; set; } = new();
 
@@ -49,9 +53,62 @@ namespace Accelerex.Web.Pages
 
         public async Task OnPost()
         {
-            string jsonString = JsonConvert.SerializeObject(JObject.Parse(OpenHourText));
-            RequestModel = ConvertStringToJson(jsonString);
-            var openHours = await _processor.ProcessOpenHour(RequestModel);
+            if (ModelState.IsValid)
+            {
+                //string jsonString = JsonConvert.SerializeObject(JObject.Parse(Input.OpenHourText));
+                if(Input.UploadType == "File")
+                {
+                    string ext = Path.GetExtension(Input.OpenHourFile.FileName);
+                    bool uploadHasError = ValidateUpload(ext);
+
+                    if (uploadHasError)
+                        return;
+
+                    Input.OpenHourText = await GetJsonStringFromFile();
+                }
+
+                RequestModel = ConvertStringToJson(Input.OpenHourText);
+                Input.OpenHours = await _processor.ProcessOpenHour(RequestModel);
+            }
+        }
+
+        private bool ValidateUpload(string ext)
+        {
+            bool error = false;
+
+            if (!IsValidFileType(ext))
+            {
+                ModelState.AddModelError(string.Empty, "Invalid filetype uploaded. Accepts .txt and .json only");
+                error = true;
+            }
+            if (!IsValidFile())
+            {
+                ModelState.AddModelError(string.Empty, "Invalid file uploaded");
+                error = true;
+            }
+
+            return error;
+        }
+
+        private bool IsValidFile()
+        {
+            return (Input.OpenHourFile.Length > 0 && (Input.OpenHourFile.ContentType == "text/plain" || Input.OpenHourFile.ContentType == "application/json"));
+        }
+
+        private bool IsValidFileType(string extension)
+        {
+            return (extension == ".txt" || extension == ".json");
+        }
+
+        private async Task<string> GetJsonStringFromFile()
+        {
+            var result = new StringBuilder();
+            using (var reader = new StreamReader(Input.OpenHourFile.OpenReadStream()))
+            {
+                while (reader.Peek() >= 0)
+                    result.AppendLine(await reader.ReadLineAsync());
+            }
+            return result.ToString();
         }
 
         private OpenHourRequestModel ConvertStringToJson(string jsonString)

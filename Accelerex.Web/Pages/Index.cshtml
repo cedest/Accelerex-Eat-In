@@ -12,56 +12,126 @@
         .processTypeHolder.active {
             display: block !important;
         }
+
+    table tr td {
+        font-style: italic;
+        font-size: 1.2rem;
+    }
 </style>
 
 <div class="text-left">
     <h1 class="display-4 mb-4">Open Hours (OH) Manager</h1>
 
-    <form method="post" id="openHours">
+    <form method="post" id="openHours" enctype="multipart/form-data">
         <div class="row" style="font-size:1.2rem;">
+            <div asp-validation-summary="ModelOnly" class="text-danger text-center" style="list-style: none;"></div>
             <div class="col-lg-6">
                 <div class="form-group mb-3">
                     <div class="form-check form-check-inline">
-                        <input asp-for="IsFileUpload" class="form-check-input" processType="File" type="radio" name="processType" id="processTypeFile" value="File" checked>
+                        <input asp-for="Input.UploadType" class="form-check-input" processType="File" type="radio" id="processTypeFile" value="File">
                         <label class="form-check-label font-weight-bold" for="processTypeFile">
                             Upload File
                         </label>
                     </div>
                     <div class="form-check form-check-inline ml-5">
-                        <input asp-for="IsJsonText" class="form-check-input" processType="Text" type="radio" name="processType" id="processTypeText" value="Text">
+                        <input asp-for="Input.UploadType" class="form-check-input" processType="Text" type="radio" id="processTypeText" value="Text">
                         <label class="form-check-label font-weight-bold" for="processTypeText">
                             Paste Text
                         </label>
                     </div>
                 </div>
-                <div class="form-group active File processTypeHolder my-5">
+                <div class="form-group File processTypeHolder my-5">
                     <label for="openHoursFile" class="font-weight-bold mb-3">Open Hours File</label>
-                    <input asp-for="OpenHourFile" type="file" accept=".txt, .json" class="form-control-file p-2 border" id="openHoursFile">
-                    <span asp-validation-for="OpenHourFile" class="text-danger"></span>
+                    <input asp-for="Input.OpenHourFile" accept=".txt, .json" class="form-control-file p-2 border">
+                    <span asp-validation-for="Input.OpenHourFile" class="text-danger"></span>
                 </div>
                 <div class="form-group Text processTypeHolder my-5">
                     <label for="openHoursText" class="font-weight-bold mb-3">Open Hours Text (Paste text below!!)</label>
-                    <textarea asp-for="OpenHourText" class="form-control" id="openHoursText" rows="9" style="resize: none"></textarea>
-                    <span asp-validation-for="OpenHourText" class="text-danger"></span>
+                    <textarea asp-for="Input.OpenHourText" class="form-control" id="openHoursText" rows="9" style="resize: none"></textarea>
+                    <span asp-validation-for="Input.OpenHourText" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Process OH! <i class="far fa-paper-plane ml-2"></i></button>
+                    <button type="submit" class="btn btn-primary">Process OH! <i class="fas fa-paper-plane ml-2"></i></button>
                 </div>
             </div>
         </div>
     </form>
+
+    @if (Model.Input?.OpenHours != null)
+    {
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="d-flex flex-row">
+                    <img src="~/images/logo.png" style="width: 50px;" class="card-img-top mx-3 mt-3" alt="...">
+                    <h4 class="text-dark-50 align-self-end mt-3">Processed Open Hours</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td><strong>Monday:</strong> @Model.Input.OpenHours.Monday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tuesday:</strong> @Model.Input.OpenHours.Tuesday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wednesday:</strong> @Model.Input.OpenHours.Wednesday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thursday:</strong> @Model.Input.OpenHours.Thursday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Friday:</strong> @Model.Input.OpenHours.Friday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saturday:</strong> @Model.Input.OpenHours.Saturday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunday:</strong> @Model.Input.OpenHours.Sunday</td>
+                                </tr>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
 </div>
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $('.btn').hide();
+        let radioChecked = $('input[name="Input.UploadType"]:checked');
+        let radioCheckedVal = $('input[name="Input.UploadType"]:checked').val();
+        console.log(radioCheckedVal);
+
+        if (radioCheckedVal !== undefined) {
+            var processType = $(radioChecked).attr('processType');
+            $('.processTypeHolder.' + processType).addClass('active');
+
+            $('.btn').show();
+        }
+
         $(document).on('change', 'input[type="radio"]', function (e, i) {
             $('.processTypeHolder').removeClass('active');
+
             var processType = $(this).attr('processType');
             $('.processTypeHolder.' + processType).addClass('active');
+
+            $('.btn').show();
         });
 
         $(document).on('click', '.btn', function () {
-            $(this).attr('disable', 'disable');
+            setTimeout(function () {
+                $(this).attr('disabled', 'disabled');
+            }, 200);
+            $('i', $(this)).removeClass('fa-paper-plane').addClass('fa-spin fa-spinner');
         });
     });
 </script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
