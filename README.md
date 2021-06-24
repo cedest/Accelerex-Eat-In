@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.com/cedest/Accelerex-Eat-In.svg?branch=main)](https://travis-ci.com/cedest/Accelerex-Eat-In)
 
 
-Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solution. This solution helps Accelerex restaurant manage open hours on a daily basis.
+Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready C# .Net Core solution. This solution helps Accelerex restaurant manage open hours on a daily basis.
 
 ## Table of Content
 - Features
@@ -33,7 +33,7 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 
 
 ## How to Install
-- [Download](https://git-scm.com/downloads) and Install Git for your OD version
+- [Download](https://git-scm.com/downloads) and Install Git for your OS version
 - [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .NET 5
 - [Download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) and Install Visual Studio Community Edition
 - Clone the project from github
@@ -42,11 +42,15 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 Navigate to the directory where you want to download the solution, run the following line of code to download the solution from git
 git clone https://github.com/cedest/Accelerex-Eat-In.git
 ```
+- Once the pull is complete:
+> Navigate to the downloaded application folder and double click on the solution (Accelerex.Test.sln) file to lauch the application using visual studio. 
+> You then need to ensure that both Web & API projects are set to start.
+> 
+> Alternatively, you can publish the projects to a self hosted IIS environment
 
 
 ## How to Use
 
-- Import a HTML file and watch it magically convert to Markdown
 - Drag and drop images (requires your Dropbox account be linked)
 - Import and save files from GitHub, Dropbox, Google Drive and One Drive
 - Drag and drop markdown and HTML files into Dillinger
