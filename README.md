@@ -98,8 +98,8 @@ Instructions on how to use them in your own application are linked below.
 
 | Plugin | README |
 | ------ | ------ |
-| Newtonsoft.Json | [https://github.com/JamesNK/Newtonsoft.Json/blob/master/README.md][PlDb] |
-| Polly | [plugins/github/README.md][PlGh] |
+| Newtonsoft.Json | [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json/blob/master/README.md) |
+| Polly | [Polly](https://github.com/App-vNext/Polly/blob/master/README.md) |
 
 ## Credits
 
