@@ -40,7 +40,8 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready C# .Net Core s
 - [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .NET 5
 - [Download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) and Install Visual Studio Community Edition
 - Clone the project from github
-- 
+
+
 ```sh
 Navigate to the directory where you want to download the solution, run the following line of code to download the solution from git
 git clone https://github.com/cedest/Accelerex-Eat-In.git
