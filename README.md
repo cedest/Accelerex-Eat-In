@@ -31,46 +31,18 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 - It then processes the string to an easily readable format
 - Sends readable formatted string back to the caller
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
 
 ## How to Install
-- [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .Net 5
+- [Download](https://git-scm.com/downloads) and Install Git for your OD version
+- [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .NET 5
 - [Download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) and Install Visual Studio Community Edition
 - Clone the project from github
+- 
 ```sh
-Navigate to the directory where you want to download the solution, then run the following command
-cd dillinger
-npm i
-node app
+Navigate to the directory where you want to download the solution, run the following line of code to download the solution from git
+git clone https://github.com/cedest/Accelerex-Eat-In.git
 ```
-The Web project is written  is
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
 
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
 
 ## How to Use
 
