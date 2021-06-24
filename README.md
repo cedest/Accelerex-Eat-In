@@ -45,8 +45,9 @@ git clone https://github.com/cedest/Accelerex-Eat-In.git
 - Once the pull is complete:
 > Navigate to the downloaded application folder and double click on the solution (Accelerex.Test.sln) file to lauch the application using visual studio. 
 > You then need to ensure that both Web & API projects are set to start. Then click Start
+
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/wwwroot/images/MulipleProj.PNG]
->  
+
 > Alternatively, you can publish the projects to a self hosted IIS environment
 
 
