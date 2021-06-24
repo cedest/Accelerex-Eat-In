@@ -19,12 +19,16 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 
 ## Features
 
-- The solution features two projects; 
+- The solution features two projects 
 -- The Web project and the API project
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+- The Web project serves has the client side, from where the data will be provided
+- Data can be either be uploaded or pasted as string on the page
+- If data would be uploaded, the upload components accepts either a text file (.txt) or a json file (.json). The uploaded file must contain a valid json string
+- Once a valid json is submitted, the processed response will be displayed on the page
+
+- The API project receives the submitted json string
+- It then processes the string to an easily readable format
+- Sends readable formatted string back to the caller
 
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
