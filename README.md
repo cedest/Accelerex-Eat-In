@@ -3,7 +3,8 @@
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.com/cedest/Accelerex-Eat-In.svg?branch=main)](https://travis-ci.com/cedest/Accelerex-Eat-In)
+
 
 Accelerex Eat-In is a micro self hosted, mobile-ready, .Net Core solution.
 
