@@ -61,6 +61,10 @@ git clone https://github.com/cedest/Accelerex-Eat-In.git
 
 When you launch the application, you should see a page as shown below:
 
+- ### API Endpoint
+- [HttpPost] http://domain.com:port/api/OpenHour (e.g. http://localhost:8983/api/OpenHour)
+
+- ### Web Interface
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/Landing.PNG)](#)
 - Select the Json submission type
 
@@ -78,7 +82,6 @@ If the json string provided was well formatted, a valid, east to read open hour 
 If error encountered is not syntatic, the API tries to provide a proper error notification at that exact location
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/WithError.PNG)](#)
 
-- ### API Endpoint
 
 
 ## Tech Stack
