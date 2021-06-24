@@ -1,20 +1,26 @@
-# Accelerex-Eat-In
-## _The Last Markdown Editor, Ever_
+# Accelerex Eat-In
 
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/wwwroot/images/NET_Core_Logo.svg.thumb100.png)](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 [![Build Status](https://travis-ci.com/cedest/Accelerex-Eat-In.svg?branch=main)](https://travis-ci.com/cedest/Accelerex-Eat-In)
 
 
-Accelerex Eat-In is a micro self hosted, mobile-ready, .Net Core solution.
+Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solution. This solution helps Accelerex restaurant manage open hours on a daily basis.
 
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
+## Table of Content
+- Features
+- How to Install
+- How to Use
+- Tech Stack
+- Installation
+- Plugins
+- Credits
+- License
 
 ## Features
 
-- Import a HTML file and watch it magically convert to Markdown
+- The solution features two projects; 
+-- The Web project and the API project
 - Drag and drop images (requires your Dropbox account be linked)
 - Import and save files from GitHub, Dropbox, Google Drive and One Drive
 - Drag and drop markdown and HTML files into Dillinger
@@ -84,7 +90,7 @@ This text you see here is *actually- written in Markdown! To get a feel
 for Markdown's syntax, type some text into the left window and
 watch the results in the right.
 
-## Tech
+## Tech Stack
 
 Dillinger uses a number of open source projects to work properly:
 
