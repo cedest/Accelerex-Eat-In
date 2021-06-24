@@ -78,7 +78,7 @@ If the json string provided was well formatted, a valid, east to read open hour 
 If error encountered is not syntatic, the API tries to provide a proper error notification at that exact location
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/WithError.PNG)](#)
 
-
+- ### API Endpoint
 
 
 ## Tech Stack
