@@ -1,6 +1,6 @@
 # Accelerex Eat-In
 
-[![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/wwwroot/images/NET_Core_Logo.svg.thumb100.png)](https://dotnet.microsoft.com/download/dotnet/5.0)
+[![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/wwwroot/images/NET_Core_Logo.svg.thumb70.png)](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 [![Build Status](https://travis-ci.com/cedest/Accelerex-Eat-In.svg?branch=main)](https://travis-ci.com/cedest/Accelerex-Eat-In)
 
