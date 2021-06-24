@@ -116,4 +116,4 @@ MIT
 **Free Software, Hell Yeah!**
 
 ## Answer to Question 2
-- Besides the fact that Json is the defactor standard for mordern client-API communication, it is lightweight, easily readable and is usually structured to match a data object. It is the best way to store this kind of data; especially when compared with XML which requires node parsing; this can be very expensive)
+- Besides the fact that Json is the defactor standard for mordern client-API communication, it is lightweight, easily readable and is usually structured to match a data object. It is the best way to store this kind of data; especially when compared with XML which requires node parsing; this can be very expensive
