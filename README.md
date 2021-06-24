@@ -1,7 +1,7 @@
 # Accelerex-Eat-In
 ## _The Last Markdown Editor, Ever_
 
-[![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1200px-.NET_Core_Logo.svg.png)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/wwwroot/images/NET_Core_Logo.svg.thumb100.png)](https://nodesource.com/products/nsolid)
 
 [![Build Status](https://travis-ci.com/cedest/Accelerex-Eat-In.svg?branch=main)](https://travis-ci.com/cedest/Accelerex-Eat-In)
 
