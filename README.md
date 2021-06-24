@@ -98,11 +98,11 @@ Instructions on how to use them in your own application are linked below.
 
 | Plugin | README |
 | ------ | ------ |
-| Newtonsoft.Json | [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json/blob/master/README.md) |
-| Polly | [Polly](https://github.com/App-vNext/Polly/blob/master/README.md) |
+| Newtonsoft.Json | [plugins/Newtonsoft.Json/README.md](https://github.com/JamesNK/Newtonsoft.Json/blob/master/README.md) |
+| Polly | [plugins/Polly/README.md](https://github.com/App-vNext/Polly/blob/master/README.md) |
 
 ## Credits
-
+The credit is mine.
 
 
 ## License
