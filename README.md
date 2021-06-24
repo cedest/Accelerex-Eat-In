@@ -16,7 +16,7 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 - Plugins
 - Credits
 - License
-- ### Answer to Question 2
+- Answer to Question 2
 
 ## Features
 
@@ -40,7 +40,15 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready .Net Core solu
 > or formatting instructions.
 
 ## How to Install
-
+- [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .Net 5
+- [Download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) and Install Visual Studio Community Edition
+- Clone the project from github
+```sh
+Navigate to the directory where you want to download the solution, then run the following command
+cd dillinger
+npm i
+node app
+```
 The Web project is written  is
 - Import a HTML file and watch it magically convert to Markdown
 - Drag and drop images (requires your Dropbox account be linked)
