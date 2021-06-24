@@ -100,7 +100,7 @@ The solutions use a number of open source projects to work properly:
 
 ## Plugins
 
-Dillinger is currently extended with the following plugins.
+The solutions are currently extended with the following plugins.
 Instructions on how to use them in your own application are linked below.
 
 | Plugin | README |
