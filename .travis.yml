@@ -1,0 +1,6 @@
+language: csharp
+solution: Accelerex.Test.sln
+mono: none
+dotnet: 5.0.301
+script:
+ - dotnet restore
