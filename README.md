@@ -83,7 +83,7 @@ If error encountered is not syntatic, the API tries to provide a proper error no
 
 ## Tech Stack
 
-Dillinger uses a number of open source projects to work properly:
+The solutions use a number of open source projects to work properly:
 
 - [C#] - the best mordern day programming language - no shades to JAVA!
 - [HTML5] - HTML enhanced for web apps!
