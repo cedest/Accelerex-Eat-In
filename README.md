@@ -61,17 +61,20 @@ git clone https://github.com/cedest/Accelerex-Eat-In.git
 When you launch the application, you should see a page as shown below:
 
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/Landing.PNG)](#)
+- Select the Json submission type
 
-
+If File upload submission type is selected;
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/Landing-File.PNG)](#)
+- Upload a text or json file containing a valid json string, click the button "Process OH"
 
-
+If text pasting submissin type is selected
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/Landing-Text.PNG)](#)
+- Paste only a valid json string in the section provided, click the button "Process OH"
 
-
+If the json string provided was well formatted, a valid, east to read open hour data is displayed
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/WithoutError.PNG)](#)
 
-
+If the json string 
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/WithError.PNG)](#)
 
 
