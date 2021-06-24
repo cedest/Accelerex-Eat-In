@@ -55,20 +55,27 @@ namespace Accelerex.Web.Pages
         {
             if (ModelState.IsValid)
             {
-                //string jsonString = JsonConvert.SerializeObject(JObject.Parse(Input.OpenHourText));
-                if(Input.UploadType == "File")
+                try
                 {
-                    string ext = Path.GetExtension(Input.OpenHourFile.FileName);
-                    bool uploadHasError = ValidateUpload(ext);
+                    if (Input.UploadType == "File")
+                    {
+                        string ext = Path.GetExtension(Input.OpenHourFile.FileName);
+                        bool uploadHasError = ValidateUpload(ext);
 
-                    if (uploadHasError)
-                        return;
+                        if (uploadHasError)
+                            return;
 
-                    Input.OpenHourText = await GetJsonStringFromFile();
+                        Input.OpenHourText = await GetJsonStringFromFile();
+                    }
+
+                    RequestModel = ConvertStringToJson(Input.OpenHourText);
+                    Input.OpenHours = await _processor.ProcessOpenHour(RequestModel);
+
                 }
-
-                RequestModel = ConvertStringToJson(Input.OpenHourText);
-                Input.OpenHours = await _processor.ProcessOpenHour(RequestModel);
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
             }
         }
 
@@ -113,7 +120,14 @@ namespace Accelerex.Web.Pages
 
         private OpenHourRequestModel ConvertStringToJson(string jsonString)
         {
-            return JsonConvert.DeserializeObject<OpenHourRequestModel>(jsonString);
+            try
+            {
+                return JsonConvert.DeserializeObject<OpenHourRequestModel>(jsonString);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

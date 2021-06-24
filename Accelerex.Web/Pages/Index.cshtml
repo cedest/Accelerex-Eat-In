@@ -20,12 +20,13 @@
 </style>
 
 <div class="text-left">
-    <h1 class="display-4 mb-4">Open Hours (OH) Manager</h1>
+    <h3 class="my-4 text-muted" style="text-decoration: underline;">Open Hours (OH) Manager</h3>
 
     <form method="post" id="openHours" enctype="multipart/form-data">
         <div class="row" style="font-size:1.2rem;">
             <div asp-validation-summary="ModelOnly" class="text-danger text-center" style="list-style: none;"></div>
             <div class="col-lg-6">
+                <h6 class="mt-3">Submission Type:  </h6>
                 <div class="form-group mb-3">
                     <div class="form-check form-check-inline">
                         <input asp-for="Input.UploadType" class="form-check-input" processType="File" type="radio" id="processTypeFile" value="File">
