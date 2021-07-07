@@ -40,7 +40,8 @@ Accelerex Eat-In (Web & API) is a micro self hosted, mobile-ready C# .Net Core s
 - [Download](https://dotnet.microsoft.com/download/dotnet/5.0) and Install .NET 5
 - [Download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) and Install Visual Studio Community Edition
 - Clone the project from github
-- 
+
+
 ```sh
 Navigate to the directory where you want to download the solution, run the following line of code to download the solution from git
 git clone https://github.com/cedest/Accelerex-Eat-In.git
@@ -60,6 +61,10 @@ git clone https://github.com/cedest/Accelerex-Eat-In.git
 
 When you launch the application, you should see a page as shown below:
 
+- ### API Endpoint
+- [HttpPost] http://domain.com:port/api/OpenHour (e.g. http://localhost:8983/api/OpenHour)
+
+- ### Web Interface
 [![N|Solid](https://github.com/cedest/Accelerex-Eat-In/blob/main/Accelerex.Web/Screenshots/Landing.PNG)](#)
 - Select the Json submission type
 
@@ -79,10 +84,9 @@ If error encountered is not syntatic, the API tries to provide a proper error no
 
 
 
-
 ## Tech Stack
 
-Dillinger uses a number of open source projects to work properly:
+The solutions use a number of open source projects to work properly:
 
 - [C#] - the best mordern day programming language - no shades to JAVA!
 - [HTML5] - HTML enhanced for web apps!
@@ -96,7 +100,7 @@ Dillinger uses a number of open source projects to work properly:
 
 ## Plugins
 
-Dillinger is currently extended with the following plugins.
+The solutions are currently extended with the following plugins.
 Instructions on how to use them in your own application are linked below.
 
 | Plugin | README |
@@ -115,4 +119,4 @@ MIT
 **Free Software, Hell Yeah!**
 
 ## Answer to Question 2
-- Besides the fact that Json is the defactor standard for mordern client-API communication, it is lightweight, easily readable and is usually structured to match a data object. It is the best way to store this kind of data; especially when compared with XML which requires node parsing; this can be very expensive)
+Besides the fact that Json is the de-factor standard for modern client-to-API data communication, it is also lightweight, easily readable and is usually structured to match a data object. It is text-based open standard designed for human-readable data interchange. It is the best way to store this kind of data; especially when compared with XML that requires node parsing; which can be very expensive
