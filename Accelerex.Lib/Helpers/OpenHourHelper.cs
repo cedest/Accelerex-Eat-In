@@ -104,5 +104,49 @@ namespace Accelerex.Lib.Helpers
 
             return $"{conversion}{hourSuffix}";
         }
+
+        public static string DoProcessHours<T, U>(List<T> dayHours, List<U> nextDayHours) where T : class, new() where U : class
+        {
+            switch (dayHours.Count)
+            {
+                case 0:
+                    return "Closed";
+                case 1:
+                    return ProcessOneEntry(dayHours, nextDayHours);
+                case 2:
+                    {
+                        if (((dynamic)dayHours.First()).Type == "close")
+                        {
+                            dayHours.RemoveAt(0);
+                            return DoProcessHours(dayHours, nextDayHours);
+                        }
+
+                        var openTime = dayHours.First(x => ((dynamic)x).Type == "open");
+                        var closeTime = dayHours.First(x => ((dynamic)x).Type == "close");
+
+                        return ProcessTwoEntries(openTime, closeTime);
+                    }
+                default:
+                    {
+                        T lastOpening = null;
+
+                        if (((dynamic)dayHours.First()).Type == "close")
+                        {
+                            dayHours.RemoveAt(0);
+                            return DoProcessHours(dayHours, nextDayHours);
+                        }
+
+                        if (((dynamic)dayHours.Last()).Type == "open")
+                        {
+                            lastOpening = dayHours.Last();
+                            dayHours.Remove(lastOpening);
+
+                            return DoProcessHours(dayHours, nextDayHours);
+                        }
+
+                        return ProcessAllEntries(dayHours, nextDayHours, lastOpening);
+                    }
+            }
+        }
     }
 }
