@@ -1,10 +1,8 @@
 ﻿using Accelerex.Lib.Infrastructure;
-using Accelerex.Lib.Model;
+using Accelerex.Lib.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Accelerex.API.Controllers
@@ -41,5 +39,18 @@ namespace Accelerex.API.Controllers
             }
         }
 
+        //[HttpPatch("{id:guid}/email")]
+        //public async Task<ActionResult> ChangeEmail(Guid id, OpenHourResponseModel model)
+        //    => await UpdateNESICTProperty(id, request => request.Monday = model.Monday);
+
+        //private async Task<ActionResult> UpdateNESICTProperty(Guid id, Action<OpenHourResponseModel> action)
+        //{
+        //    if (await _processor.GetProcessorAsync(id) is not { } author) return BadRequest();
+
+        //    action(author);
+
+        //    bool result = await _processor.UpdateAsync(author);
+        //    return result ? Ok() : BadRequest();
+        //}
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Accelerex.Lib.Helpers
 {
@@ -10,12 +8,12 @@ namespace Accelerex.Lib.Helpers
     {
         public static string ProcessAllEntries<T, U>(List<T> tuesdayHours, List<U> wednesdayHours, T lastOpening) where T : class, new()
         {
-            var result = new List<string>();
+            List<string> result = new List<string>();
 
             for (int i = 0; i <= (tuesdayHours.Count / 2);)
             {
-                var openTime = tuesdayHours[i];
-                var closeTime = tuesdayHours[i + 1];
+                T openTime = tuesdayHours[i];
+                T closeTime = tuesdayHours[i + 1];
 
                 result.Add(ProcessTwoEntries(openTime, closeTime));
                 i += 2;
@@ -42,21 +40,25 @@ namespace Accelerex.Lib.Helpers
 
         public static string ProcessTwoEntries<T>(T openTime, T closeTime)
         {
-            var result = new List<string>();
+            List<string> result = new List<string>();
 
             if (openTime == null)
+            {
                 result.Add("Error - Open time not set");
+            }
             else
             {
-                var open = ConvertEpochTime(((dynamic)openTime).Value.ToString());
+                dynamic open = ConvertEpochTime(((dynamic)openTime).Value.ToString());
                 result.Add(open);
             }
 
             if (closeTime == null)
+            {
                 result.Add("Error - Close time not set");
+            }
             else
             {
-                var close = ConvertEpochTime(((dynamic)closeTime).Value.ToString());
+                dynamic close = ConvertEpochTime(((dynamic)closeTime).Value.ToString());
                 result.Add(close);
             }
 
@@ -65,14 +67,14 @@ namespace Accelerex.Lib.Helpers
 
         public static string ProcessOneEntry<T, U>(List<T> tuesdayHours, List<U> wednesdayHours)
         {
-            var result = new List<string>();
+            List<string> result = new List<string>();
 
             if (((dynamic)tuesdayHours.First()).Type == "close")
             {
                 return "Closed";
             }
 
-            var openTime = ConvertEpochTime(((dynamic)tuesdayHours.First()).Value.ToString());
+            dynamic openTime = ConvertEpochTime(((dynamic)tuesdayHours.First()).Value.ToString());
             result.Add(openTime);
 
             if (wednesdayHours.Count == 0 || ((dynamic)wednesdayHours.First()).Type == "open")
@@ -81,7 +83,7 @@ namespace Accelerex.Lib.Helpers
             }
             else
             {
-                var closeTime = ConvertEpochTime(((dynamic)wednesdayHours.First()).Value.ToString());
+                dynamic closeTime = ConvertEpochTime(((dynamic)wednesdayHours.First()).Value.ToString());
                 result.Add(closeTime);
             }
 
@@ -90,11 +92,11 @@ namespace Accelerex.Lib.Helpers
 
         public static string ConvertEpochTime(string time)
         {
-            var isTime = double.TryParse(time, out double result);
+            bool isTime = double.TryParse(time, out double result);
             result = (!isTime) ? 0 : result;
 
             string hourSuffix = " AM";
-            var conversion = Math.Round((24 * result) / 86400);
+            double conversion = Math.Round((24 * result) / 86400);
 
             if (conversion > 12)
             {
@@ -121,8 +123,8 @@ namespace Accelerex.Lib.Helpers
                             return DoProcessHours(dayHours, nextDayHours);
                         }
 
-                        var openTime = dayHours.First(x => ((dynamic)x).Type == "open");
-                        var closeTime = dayHours.First(x => ((dynamic)x).Type == "close");
+                        T openTime = dayHours.First(x => ((dynamic)x).Type == "open");
+                        T closeTime = dayHours.First(x => ((dynamic)x).Type == "close");
 
                         return ProcessTwoEntries(openTime, closeTime);
                     }

@@ -1,14 +1,17 @@
 ﻿using Accelerex.Lib.Infrastructure;
-using Accelerex.Lib.Model;
+using Accelerex.Lib.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Accelerex.API.Services
 {
     public class OpenHourProcessor : IOpenHourProcessor
     {
+        public Task<OpenHourResponseModel> GetProcessorAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<OpenHourResponseModel> ProcessOpenHour(OpenHourRequestModel openHours)
         {
             OpenHourResponseModel response = new();
@@ -21,6 +24,11 @@ namespace Accelerex.API.Services
             response.Sunday = Sunday.ProcessHours(openHours.Sunday, openHours.Monday);
 
             return await Task.FromResult(response);
+        }
+
+        public Task<bool> UpdateAsync(OpenHourResponseModel author)
+        {
+            throw new NotImplementedException();
         }
     }
 }

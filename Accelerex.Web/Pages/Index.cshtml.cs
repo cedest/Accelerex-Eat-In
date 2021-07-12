@@ -1,16 +1,13 @@
 ﻿using Accelerex.Lib.Infrastructure;
-using Accelerex.Lib.Model;
+using Accelerex.Lib.Models;
 using Accelerex.Web.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,7 +60,9 @@ namespace Accelerex.Web.Pages
                         bool uploadHasError = ValidateUpload(ext);
 
                         if (uploadHasError)
+                        {
                             return;
+                        }
 
                         Input.OpenHourText = await GetJsonStringFromFile();
                     }
@@ -109,11 +108,13 @@ namespace Accelerex.Web.Pages
 
         private async Task<string> GetJsonStringFromFile()
         {
-            var result = new StringBuilder();
-            using (var reader = new StreamReader(Input.OpenHourFile.OpenReadStream()))
+            StringBuilder result = new StringBuilder();
+            using (StreamReader reader = new StreamReader(Input.OpenHourFile.OpenReadStream()))
             {
                 while (reader.Peek() >= 0)
+                {
                     result.AppendLine(await reader.ReadLineAsync());
+                }
             }
             return result.ToString();
         }
